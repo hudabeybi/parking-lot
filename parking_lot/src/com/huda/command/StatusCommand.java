@@ -14,7 +14,7 @@ public class StatusCommand extends BaseCommand implements ICommand {
 		ParkingLotRepository parkingLotRepository = this.CreateParkingLotRepository();
 		List<ParkingLot> parkingLots =  parkingLotRepository.FindAllParkingLot();
 		
-		result = "Slot. No\tRegistration No\tColour";
+		result += "Slot. No\tRegistration No\tColour";
 		for(ParkingLot parkingLot : parkingLots)
 		{
 			
@@ -25,7 +25,7 @@ public class StatusCommand extends BaseCommand implements ICommand {
 				registrationNumber = parkingLot.Car.RegistrationNo;
 				color = parkingLot.Car.CarColor;
 			}
-			result = parkingLot.IdParkingLot + "\t" + registrationNumber + "\t" + color + "\r\n";
+			result += parkingLot.IdParkingLot + "\t" + registrationNumber + "\t" + color + "\r\n";
 		}
 		return result;
 	}
