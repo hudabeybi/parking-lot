@@ -1,16 +1,16 @@
 package com.huda.unittesting;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.huda.command.ParkCommand;
 import com.huda.command.RegistrationNumberByColorCommand;
 
-class RegistrationNumberByColorCommandTestTest extends BaseTestUnit {
+public class RegistrationNumberByColorCommandTestTest extends BaseTestUnit {
 
 	@Test
-	void testExecute() {
+	public void testExecute() {
 		this.parkParkingLot();
 		this.Leave(4);
 		this.anotherPark();
@@ -18,7 +18,7 @@ class RegistrationNumberByColorCommandTestTest extends BaseTestUnit {
 		RegistrationNumberByColorCommand parkCommand = new RegistrationNumberByColorCommand();
 		String [] parameters = new String[] { "White" };
 		String result = parkCommand.Execute(parameters);
-		
+		System.out.println(result);
 		assertEquals(result, "KA-01-HH-1234,KA-01-HH-9999,KA-01-P-333");
 	}
 

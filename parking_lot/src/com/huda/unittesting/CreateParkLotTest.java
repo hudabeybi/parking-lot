@@ -1,27 +1,21 @@
 package com.huda.unittesting;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.huda.command.ParkingLotCreateCommand;
 import com.huda.repository.Memory;
 
-class CreateParkLotTest {
+public class CreateParkLotTest {
 
 	@Test
-	void TestCreateParkLotCommand() {
+	public void TestCreateParkLotCommand() {
 		ParkingLotCreateCommand unit = new ParkingLotCreateCommand();
 		String [] parameters = new String[] { "6" };
-		unit.Execute(parameters);
+		String result = unit.Execute(parameters);
+		System.out.println(result);
 		assertEquals(6, Memory.ParkingLots.size() );
 	}
 
-	@Test
-	void TestCreateParkLotCommandFail() {
-		ParkingLotCreateCommand unit = new ParkingLotCreateCommand();
-		String [] parameters = new String[] { "6" };
-		unit.Execute(parameters);
-		assertEquals(8, Memory.ParkingLots.size() );
-	}
 }
