@@ -25,7 +25,7 @@ public class StatusCommand extends BaseCommand implements ICommand {
 				registrationNumber = parkingLot.Car.RegistrationNo;
 				color = parkingLot.Car.CarColor;
 			}
-			result = parkingLot.IdParkingLot + "\t" + registrationNumber + "\t" + color;
+			result = parkingLot.IdParkingLot + "\t" + registrationNumber + "\t" + color + "\r\n";
 		}
 		return result;
 	}

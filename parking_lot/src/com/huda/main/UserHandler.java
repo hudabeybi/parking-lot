@@ -120,7 +120,7 @@ public class UserHandler {
 		while ((st = br.readLine()) != null) 
 		{ 
 			String sCommand = ParseCommand(st);
-			String [] sParams = ParseParameter(sCommand);
+			String [] sParams = ParseParameter(st);
 			try {
 				RunCommand(sCommand, sParams);
 				
