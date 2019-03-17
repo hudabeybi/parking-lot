@@ -90,6 +90,7 @@ public class UserHandler {
 	{
 		BufferedReader reader =
                 new BufferedReader(new InputStreamReader(System.in));
+		
 		while(true)
 		{
 			System.out.print("$$$ ");
@@ -98,6 +99,8 @@ public class UserHandler {
 			String [] sParams = ParseParameter(sLine);
 			
 			try {
+				if(sCommand.toLowerCase().equals("exit"))
+					break;
 				RunCommand(sCommand, sParams);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
